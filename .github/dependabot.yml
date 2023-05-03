@@ -17,11 +17,3 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-    filters:
-      # Only consider Dockerfiles
-      - type: "path"
-        path: "**/Dockerfile*"
-    lookup:
-      kubernetes:
-        datasource: "kubernetes-api"
-        file-match: ["**/*.yaml"]
