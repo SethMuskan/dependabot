@@ -25,4 +25,3 @@ updates:
       kubernetes:
         datasource: "kubernetes-api"
         file-match: ["**/*.yaml"]
-    package-ecosystem: "kubernetes"
