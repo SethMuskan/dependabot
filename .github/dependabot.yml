@@ -13,3 +13,16 @@ updates:
     directory: "/ruby"
     schedule:
       interval: weekly
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    filters:
+      # Only consider Dockerfiles
+      - type: "path"
+        path: "**/Dockerfile*"
+    lookup:
+      kubernetes:
+        datasource: "kubernetes-api"
+        file-match: ["**/*.yaml"]
+    package-ecosystem: "kubernetes"
